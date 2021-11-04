@@ -1,0 +1,42 @@
+<div class="card">
+    <app-nav></app-nav>
+    <div class="alert alert-success" *ngIf="message" role="alert">
+      {{message}}
+    </div>
+    <div class="spinner-border" *ngIf="!message && progress" role="status">
+      <span class="visually-hidden"></span>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Paiment Marchand</h5>
+      <form class="row" [formGroup]="transfertForm" (ngSubmit)="getFacture()">
+        <div class="col-auto">
+          <input type="text" class="form-control" formControlName="numero_facture" id="inputNumFcat" placeholder="Numero Facture">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Généré</button>
+        </div>
+      </form>
+    </div>
+    <table class="table" *ngIf="facture">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">No fact</th>
+            <th scope="col">Montant</th>
+            <th scope="col">Date</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>{{facture.numero_facture}}</td>
+            <td>{{facture.montant_a_payer}}</td>
+            <td>{{facture.date_limite_paiement}}</td>
+            <td *ngIf="facture.paye" class="text-success">Facture Payé</td>
+            <td *ngIf="!facture.paye"><buton class="btn btn-success" (click)="payFacture()" >Payer</buton></td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div> 

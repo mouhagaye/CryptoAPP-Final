@@ -1,0 +1,23 @@
+<div class="card">
+    <app-nav></app-nav>
+    <div class="alert alert-success" *ngIf="message" role="alert">
+      {{message}}
+    </div>
+    <div class="spinner-border" *ngIf="!message && progress" role="status">
+      <span class="visually-hidden"></span>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Paiment Marchand</h5>
+      <form style="width: 50%;" [formGroup]="transfertForm" (ngSubmit)="transfertMoney()" >
+        <div class="mb-3">
+          <label for="exampleInputdest" class="form-label">Code marchand</label>
+          <input type="number" class="form-control" formControlName="code_marchand" id="exampleInputdest" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputValue" class="form-label">Montant</label>
+          <input type="number" class="form-control" formControlName="price" id="exampleInputValue" aria-describedby="emailHelp">
+        </div>
+        <button type="submit" [disabled]="transfertForm.invalid || desabledButton" class="btn btn-primary">Payer</button>
+      </form>
+    </div>
+  </div> 

@@ -1,0 +1,34 @@
+version: '3'
+services:
+  node:
+    restart: always
+    build: ./cryptoBackend
+    ports:
+      - 4000:4000
+    volumes:
+      - ./:/cryptoBackend
+  ionic:
+    restart: always
+    build: ./crypto-app
+    ports:
+        - 8100:8100
+    volumes:
+        - ./:/cryptoClient
+    command: ionic serve --all
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+  stellar:
+    image: ./docker-stellar-core-horizon
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/stellar
+volumes:
+ mongodb:
+networks:
+  dockernet:
+      external: true

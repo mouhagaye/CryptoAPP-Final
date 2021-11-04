@@ -1,0 +1,41 @@
+<div class="auth-wrapper container">
+    <div class="alert alert-danger" *ngIf="alertError==true" role="alert">
+        {{ messageAlert }}
+    </div>
+    <mat-progress-bar color="warn" *ngIf="progressBar==true" mode="indeterminate"></mat-progress-bar>
+    <div fxLayoutAlign="center center" fxFlexFill >
+        <mat-card fxFlex="45"  >
+
+            <form fxLayout="column" class="form-signin example-form" [formGroup]="accountForm" (ngSubmit)="loginAccount()">
+                <mat-toolbar color="warn" class="h3 mb-3 font-weight-normal text-center">Acceder à votre compte</mat-toolbar>
+                <mat-form-field class="example-full-width form-group">
+                <mat-label>Numéro de téléphone</mat-label>
+                <input matInput type="tel" class="form-control" formControlName="number_phone" placeholder="776298413" required>
+                </mat-form-field>
+            
+                <mat-form-field class="example-full-width form-group">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput type="password" class="form-control" formControlName="password" placeholder="mot de passe">
+                </mat-form-field>
+                
+                <button mat-raised-button color="warn" type="submit" [disabled]="accountForm.invalid"  class="btn btn-block btn-primary">Connecter</button>
+                <button mat-button color="warn" type="submit"  class="btn btn-link" routerLink="/register">Créer un compte</button>
+
+            </form>
+        </mat-card>
+    </div>
+      
+    <!-- <form class="form-signin" [formGroup]="accountForm" (ngSubmit)="loginAccount()">
+        <h3 class="h3 mb-3 font-weight-normal text-center">Acceder à votre compte</h3>
+        <div class="form-group">
+            <label>Numéro de téléphone</label>
+            <input type="tel" class="form-control" formControlName="number_phone" placeholder="776298413" required>
+        </div>
+        <div class="form-group">
+            <label>Mot de passe</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="mot de passe">
+        </div>
+        <button type="submit" [disabled]="accountForm.invalid"  class="btn btn-block btn-primary">Connecter</button>
+        <button type="submit"  class="btn btn-link" routerLink="/register">Créer un compte</button>
+    </form> -->
+</div>

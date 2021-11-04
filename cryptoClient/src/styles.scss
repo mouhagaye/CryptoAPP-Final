@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 0%; 
+}
+.bgimage {
+    background-image: url("assets/Images/acceuill-b-2-c-v-3-ConvertImage.png");
+    background-color: rgba($color: #aaaaaa, $alpha: 0.2);
+    margin-top: 0;
+    padding-top: 50px;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

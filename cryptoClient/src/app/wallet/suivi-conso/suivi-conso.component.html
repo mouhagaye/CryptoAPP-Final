@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="card container-fluid mb-3" >
+      <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+              <h5 class="card-title">Mon suivi conso</h5>
+              <div class="card text-white bg-success mb-3" style="max-width: auto;">
+                  <div class="card-body">
+                    <h5 class="card-title">Mon solde</h5>
+                    <div class="spinner-border" *ngIf="solde==null" role="status">
+                      <span class="visually-hidden"></span>
+                    </div>
+                    <p class="card-text" *ngIf="solde !== null"> {{ solde }} </p>
+                  </div>
+                </div>
+                <div class="card text-white bg-danger mb-3" style="max-width: auto;">
+                  <div class="card-body" routerLink="/account/tranfert">
+                    <h5 class="card-title">Tranfert</h5>
+                    <p class="card-text">Envoie et Reception de cryptomonnaie</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-6 ">
+              <h5 class="card-title">5 dernières transactions</h5>
+              <div class="card">
+                <div class="card-body"> 
+                  <div class="spinner-border" *ngIf="hist==null" role="status">
+                    <span class="visually-hidden"></span>
+                 </div>
+                  <div class="card-text overflow-auto" *ngFor="let hist of hist| slice:0:5; let i=index">
+                    <hr *ngIf="i!=5">  
+                    {{hist}}
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>    
+  </div>
+
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <div class="card text-white bg-secondary " style="max-width: auto;">
+            <div class="card-body" type="button" >
+              <p class="card-text">Aide Assistance</p>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white bg-secondary" style="max-width: auto;">
+            <div class="card-body" type="button" routerLink="/account/generer-code">
+              <p class="card-text">Générer code d'achat</p>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white bg-secondary " style="max-width: auto;">
+          <div class="card-body" type="button" routerLink="/account/code-marchand">
+            <p class="card-text">Code marchand</p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card text-white bg-secondary " style="max-width: auto;">
+          <div class="card-body" type="button" routerLink="/account/payment-marchand">
+            <p class="card-text">Paiement marchand</p>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-white bg-secondary " style="max-width: auto;">
+          <div class="card-body" type="button" (click)='deposite()'>
+            <p class="card-text">Dépôt</p>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-white bg-secondary " style="max-width: auto;">
+        <div class="card-body" type="button" (click)='withdraw()'>
+          <p class="card-text">Retrait</p>
+        </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="card">
+    <app-nav></app-nav>
+    <p *ngIf="message">{{message}}</p>
+    <div class="spinner-border" *ngIf="!message && progress" role="status">
+      <span class="visually-hidden"></span>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Transfert eFCFA</h5>
+      <form style="width: 50%;" [formGroup]="transfertForm" (ngSubmit)="transfertMoney()" >
+        <div class="mb-3">
+          <label for="exampleInputdest" class="form-label">Numéro du destinataire</label>
+          <input type="tel" class="form-control" formControlName="destinataire" id="exampleInputdest" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputValue" class="form-label">Montant</label>
+          <input type="number" class="form-control" formControlName="montant" id="exampleInputValue" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+          <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </div> 

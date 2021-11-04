@@ -1,0 +1,89 @@
+form{
+    width: 100%;
+}
+.bouton{
+    text-align: center;
+}
+ion-button{
+    margin-top: 35px;
+    height: 48px;
+    font-size: 18px;
+    text-transform: initial;
+    border-radius: 50px;
+    box-shadow: 1px 8px 8px 0px rgba($color: #ffffff, $alpha: 0.08);
+}
+ion-card{
+    background-color: #ffffff;
+    border-radius: 20px 20px 0 0;
+    margin: 0;
+    height: 150px;
+}
+#montant{
+    height: 200px;
+    ion-input{
+        height: 200px;
+        text-align: center;
+        font-size: 50px;
+        color: #90a5cc;
+        padding-top: 20px;
+        
+
+    }
+    
+}
+p{
+    font-size: 15px;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+}
+ion-item-divider{
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+    font-size: 13px;
+    color:#90a5cc;
+    
+    div{
+        color:#90a5cc;
+    }
+    ion-icon{
+        color: #90a5cc;
+        margin-right: 15px;
+    }
+}
+#info{
+  height: 300px;
+  text-align: center;
+  background: #131313;
+
+  ion-label{
+    height: 100px;
+    text-align: center;
+    font-size: 15px;
+  }
+  ion-icon{
+    height: 100px;
+    text-align: center;
+    font-size: 50px;
+  }
+  
+}
+p{
+    color:#90a5cc;
+}
+::placeholder {
+  color: blue;
+  font-size: 10px;
+}
+td{
+    padding-right:20px;
+}
+th{
+    padding-right:20px;
+
+}
+table{
+    margin:0;
+    padding:0;
+}

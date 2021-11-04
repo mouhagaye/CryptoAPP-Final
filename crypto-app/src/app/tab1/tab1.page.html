@@ -1,0 +1,99 @@
+
+<ion-header>
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="primary">Deconnecter</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content forceOverscroll=false>
+  <ion-refresher slot="fixed" pullFactor="0.2" pullMin="10" pullMax="20" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div id="section1">
+    <div id="sub-sect1">
+      <p>{{ solde }} </p>
+      <div>
+        <ion-icon name="notifications"></ion-icon>
+        <ion-avatar>
+          <img src="assets/avatar.png">
+        </ion-avatar>
+      </div>
+    </div>
+    <span id="subText">Solde disponible </span> <span id="number">{{number_phone}}</span><br/>
+    <div id="sub-sect2">
+      <span>
+        <button routerLink="/transfert" color="primary">
+          <ion-icon name="wallet-outline"></ion-icon>
+          <p>Tranfert <br/> d'argent</p>
+        </button>
+      </span>
+      <span>
+        <button routerLink="/generer-code" color="primary">
+          <ion-icon name="wallet-outline"></ion-icon>
+          <p>Generer <br/> code</p>
+        </button>
+      </span>
+      <span>
+        <button (click)="logout()" color="primary">
+          <ion-icon name="wallet-outline"></ion-icon>
+          <p>code <br/>  marchand</p>
+        </button>
+      </span>
+      <span>
+        <button routerLink="/payement-marchand" color="primary">
+          <ion-icon name="wallet-outline"></ion-icon>
+          <p>Paiement <br/> marchand</p>
+        </button>
+      </span>
+    </div>
+
+  </div>
+  <ion-card>
+    <ion-card-content>
+      historique des transactions
+    </ion-card-content>
+    <div class="list">
+      <ion-item-divider *ngFor="let hist of hist| slice:0:5; let i=index">
+        <ion-icon name="receipt-outline"></ion-icon>
+        <div class="item item-icon-left" href="#" >
+          <i class="icon ion-person"></i>
+          {{hist}}
+        </div>
+      </ion-item-divider>
+      
+      
+      <!-- <ion-item-divider>
+        <ion-icon name="receipt-outline"></ion-icon>
+        <div class="item item-icon-left" href="#">
+          <i class="icon ion-person"></i>
+          {{hist}}
+        </div>
+      </ion-item-divider> -->
+       <!-- <div class="col-md-6 ">
+                <h5 class="card-title">5 dernières transactions</h5>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="spinner-border" *ngIf="hist==null" role="status">
+                      <span class="visually-hidden"></span>
+                   </div>
+                    <div class="card-text overflow-auto" *ngFor="let hist of hist| slice:0:5; let i=index">
+                      <hr *ngIf="i!=5">
+                      {{hist}}
+                    </div>
+
+                  </div>
+                </div>
+              </div>-->
+  </div>
+  </ion-card>
+</ion-content>

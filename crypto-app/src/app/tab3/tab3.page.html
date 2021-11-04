@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/tabs/tab1" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <p>Choisissez votre operateur </p>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <div class="card-body">
+    <ion-card id="section1">
+      <ion-icon name="information-circle-outline"></ion-icon><br/>
+      <ion-label>Vous etes entrain d'effectuer un <b>retrait</b>.<br/></ion-label>
+      <ion-label>Chosissez l'operateur de telephone<br/>
+      pour effectuer la transaction.
+      </ion-label>
+    </ion-card>
+      <ion-card id="anchor">
+        <ion-card-content>
+          <ion-item-divider>
+            <ion-card class="operateur">
+              <button (click)="withdrawal('om')" style="background-color: #040606;">
+                <img src="../../assets/logo/om.png"/>
+              </button>
+            </ion-card>
+          </ion-item-divider>
+
+          <ion-item-divider>
+            <ion-card class="operateur">
+              <button (click)="withdrawal('free')" style="background-color: #ffffff;">
+                <img src="../../assets/logo/free.png"/>
+              </button>
+            </ion-card>
+          </ion-item-divider>
+
+          <ion-item-divider>
+            <ion-card class="operateur">
+              <button routerLink="/login" style="background-color: #4144ff;">
+                <img src="../../assets/logo/wave.png"/>
+              </button>  
+            </ion-card>
+          </ion-item-divider>
+        </ion-card-content>
+      </ion-card>
+  </div>
+</ion-content>
+       

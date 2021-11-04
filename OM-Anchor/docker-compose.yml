@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  server:
+    network_mode: host
+    container_name: "test-server"
+    build: .
+    volumes:
+      - ./data:/home/data
+    ports:
+      - "9000:9000"
+    command: python3 manage.py runsslserver 0.0.0.0:9000
+  execute_outgoing_transactions:
+    network_mode: host
+    container_name: "test-execute_outgoing_transactions"
+    build: .
+    volumes:
+      - ./data:/home/data
+    command: python3 manage.py execute_outgoing_transactions --loop
+  check_trustlines:
+    network_mode: host
+    container_name: "test-check_trustlines"
+    build: .
+    volumes:
+      - ./data:/home/data
+    command: python3 manage.py check_trustlines --loop
+  watch_transaction:
+    network_mode: host
+    container_name: "test-watch_transactions"
+    build: .
+    volumes:
+      - ./data:/home/data
+    command: python3 manage.py watch_transactions
+  poll_pending_deposits:
+    network_mode: host
+    container_name: "test-poll_pending_deposits"
+    build: .
+    volumes:
+      - ./data:/home/data
+    command: python3 manage.py poll_pending_deposits --loop

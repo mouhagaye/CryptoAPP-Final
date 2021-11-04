@@ -1,0 +1,19 @@
+2021-06-26T15:34:23.466 GCTI6 [Database INFO] Connecting to: postgresql://dbname=core host=localhost user=stellar password=********
+2021-06-26T15:34:23.533 GCTI6 [SCP INFO] LocalNode::LocalNode@GCTI6 qSet: d05a3b
+2021-06-26T15:34:23.545 GCTI6 [Database INFO] DB schema is in current version
+2021-06-26T15:34:23.556 GCTI6 [default INFO] Connection effective settings:
+2021-06-26T15:34:23.556 GCTI6 [default INFO] TARGET_PEER_CONNECTIONS: 8
+2021-06-26T15:34:23.556 GCTI6 [default INFO] MAX_ADDITIONAL_PEER_CONNECTIONS: 64
+2021-06-26T15:34:23.556 GCTI6 [default INFO] MAX_PENDING_CONNECTIONS: 500
+2021-06-26T15:34:23.556 GCTI6 [default INFO] MAX_OUTBOUND_PENDING_CONNECTIONS: 56
+2021-06-26T15:34:23.556 GCTI6 [default INFO] MAX_INBOUND_PENDING_CONNECTIONS: 444
+2021-06-26T15:34:23.556 GCTI6 [History INFO] Probing history archive 'vs' for existing state
+2021-06-26T15:34:23.575 GCTI6 [History INFO] Downloading history archive state: .well-known/stellar-history.json
+2021-06-26T15:34:23.584 GCTI6 [Process WARNING] process 132 exited 1: cp /tmp/stellar-core/history/vs/.well-known/stellar-history.json buckets/tmp/history-4556fed2f0eba917/f941416c9ed63746-stellar-history.json
+2021-06-26T15:34:23.584 GCTI6 [History ERROR] Could not download file: archive vs maybe missing file .well-known/stellar-history.json
+2021-06-26T15:34:23.590 GCTI6 [History ERROR] Could not download .well-known/stellar-history.json file: corrupt archive vs
+2021-06-26T15:34:23.597 GCTI6 [History INFO] History archive 'vs' appears uninitialized
+2021-06-26T15:34:23.597 GCTI6 [History INFO] Initializing history archive 'vs'
+2021-06-26T15:34:23.656 GCTI6 [History INFO] Initialized history archive 'vs'
+2021-06-26T15:34:23.656 GCTI6 [default INFO] Application destructing
+2021-06-26T15:34:23.677 GCTI6 [default INFO] Application destroyed

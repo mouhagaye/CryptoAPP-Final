@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/tabs/tab1" color="primary">
+        <ion-icon  slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <p>Entrer le montant </p>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="card-body">
+    <form [formGroup]="transfertForm" (ngSubmit)="transfertMoney()" >
+      <ion-item id="montant" >
+        <ion-input placeholder="0.000" type="number" class="form-control" formControlName="montant" id="exampleInputValue" aria-describedby="emailHelp" required></ion-input>
+      </ion-item>
+    <ion-card>
+      <ion-card-content>
+        <ion-item-divider>
+          <ion-input placeholder="Numero du destinataire" type="tel" formControlName="destinataire" id="exampleInputdest" aria-describedby="emailHelp" required></ion-input>
+        </ion-item-divider> 
+
+        <ion-item-divider>
+          <ion-input type="password" placeholder="Mot de passe" formControlName="password" id="exampleInputPassword1" required></ion-input>
+        </ion-item-divider> 
+      </ion-card-content>
+    </ion-card>
+    <div class="bouton">
+      <ion-button expand="block" [disabled]="transfertForm.invalid" shape="round" type="submit" >Envoyer</ion-button>
+    </div>     
+    </form>
+     <ion-card id="info" *ngIf="!message && !progress">
+      <ion-icon name="information-circle-outline"></ion-icon><br/>
+      <ion-label>Le montant de la transaction ne doit pas depasser<br/>
+      le limite de 100000000 eFCFA
+      </ion-label>
+    </ion-card>
+    <ion-card id="info" *ngIf="!message && progress">
+      <ion-spinner name="crescent"></ion-spinner>
+    </ion-card>
+
+    <ion-card style="color:green; font-size: 30px;" id="info" *ngIf="message === 'transaction reussie'">
+      <ion-icon name="checkmark-circle-outline"></ion-icon><br/>
+      <ion-label><h3 >{{ message }}</h3>
+      </ion-label>
+    </ion-card>
+
+     <ion-card style="color:red; font-size: 30px;" id="info" *ngIf="message && message !== 'transaction reussie'">
+      <ion-icon name="alert-circle-outline"></ion-icon><br/>
+      <ion-label><h3 >{{ message }}</h3>
+      </ion-label>
+    </ion-card>
+
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/tabs/tab1" color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <p>{{message}}</p>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="card-body">
+     <form class="row" [formGroup]="codeForm" (ngSubmit)="genererCodeAchat()" >
+     <ion-item id="montant" >
+        <ion-label>{{codeAchat}}</ion-label>
+      </ion-item>
+    <ion-card>
+      <ion-card-content>
+          <ion-item-divider>
+            <ion-input placeholder="Numero du destinataire" type="tel" type="text" readonly class="form-control-plaintext" id="staticEmail2" value="{{number_phone}}"></ion-input>
+          </ion-item-divider> 
+
+            <ion-item-divider>
+              <ion-input type="password" class="form-control" formControlName="password" id="inputPassword2" placeholder="Mot de passe"></ion-input>
+            </ion-item-divider> 
+        </ion-card-content>
+      </ion-card>
+
+      <div class="bouton">
+        <ion-button expand="block" shape="round" type="submit" >Générer</ion-button>
+      </div>  
+      </form>
+     <ion-card id="info">
+      <ion-icon name="information-circle-outline"></ion-icon><br/>
+      <ion-label> Vous pouvez générer un code pour faire un achat en ligne.<br /> 
+      Ce code ne pourra être utilisé qu'une seule fois <br/>
+      et à un délais d'expiration de deux (2) minutes après sa création.
+
+      </ion-label>
+    </ion-card>
+  </div>
+
+
+</ion-content>
+

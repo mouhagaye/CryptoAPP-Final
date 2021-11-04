@@ -1,0 +1,20 @@
+<!DOCTYPE html>>
+<html>
+    <header>
+
+    </header>
+    <body>
+        <form action="{{ url_for('valider') }}" method="post">
+            <input type="submit" name="depot" value="success">
+        </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js"></script>
+
+            <script type="text/javascript" charset="utf-8">
+            var socket = io();
+            socket.on('connect', function() {
+                socket.emit('my event', {data: 'I\'m connected!'});
+            });
+        </script>
+    </body>
+    
+</html>

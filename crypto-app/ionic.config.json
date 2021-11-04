@@ -1,0 +1,8 @@
+{
+  "name": "CryptoApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "d93ee36f"
+}

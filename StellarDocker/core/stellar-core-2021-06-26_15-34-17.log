@@ -1,0 +1,37 @@
+2021-06-26T15:34:17.562 GCTI6 [Database INFO] Connecting to: postgresql://dbname=core host=localhost user=stellar password=********
+2021-06-26T15:34:17.962 GCTI6 [SCP INFO] LocalNode::LocalNode@GCTI6 qSet: d05a3b
+2021-06-26T15:34:22.295 GCTI6 [default INFO] * 
+2021-06-26T15:34:22.295 GCTI6 [default INFO] * The database has been initialized
+2021-06-26T15:34:22.295 GCTI6 [default INFO] * 
+2021-06-26T15:34:22.326 GCTI6 [Database INFO] Applying DB schema upgrade to version 13
+2021-06-26T15:34:22.333 GCTI6 [Database INFO] Adding column 'ledgerext' to table 'accounts'
+2021-06-26T15:34:22.333 GCTI6 [Database INFO] Adding column 'ledgerext' to table 'trustlines'
+2021-06-26T15:34:22.432 GCTI6 [Database INFO] Adding column 'ledgerext' to table 'accountdata'
+2021-06-26T15:34:22.498 GCTI6 [Database INFO] Adding column 'ledgerext' to table 'offers'
+2021-06-26T15:34:22.500 GCTI6 [Database INFO] Adding column 'extension' to table 'accounts'
+2021-06-26T15:34:22.505 GCTI6 [Database INFO] Updating extension schema for accounts
+2021-06-26T15:34:22.551 GCTI6 [Database INFO] copyIndividualAccountExtensionFieldsToOpaqueXDR: updated 0 records(s) with liabilities in accounts table
+2021-06-26T15:34:22.557 GCTI6 [Database INFO] Dropping column 'buyingliabilities' from table 'accounts'
+2021-06-26T15:34:22.559 GCTI6 [Database INFO] Dropping column 'sellingliabilities' from table 'accounts'
+2021-06-26T15:34:22.566 GCTI6 [Database INFO] Adding column 'extension' to table 'trustlines'
+2021-06-26T15:34:22.568 GCTI6 [Database INFO] copyIndividualTrustLineExtensionFieldsToOpaqueXDR: updating extension schema for trustlines
+2021-06-26T15:34:22.586 GCTI6 [Database INFO] copyIndividualTrustLineExtensionFieldsToOpaqueXDR: updated 0 records(s) with liabilities in trustlines table
+2021-06-26T15:34:22.586 GCTI6 [Database INFO] Dropping column 'buyingliabilities' from table 'trustlines'
+2021-06-26T15:34:22.588 GCTI6 [Database INFO] Dropping column 'sellingliabilities' from table 'trustlines'
+2021-06-26T15:34:22.591 GCTI6 [Database INFO] Adding column 'extension' to table 'offers'
+2021-06-26T15:34:22.592 GCTI6 [Database INFO] Adding column 'extension' to table 'accountdata'
+2021-06-26T15:34:22.957 GCTI6 [Database INFO] DB schema is in current version
+2021-06-26T15:34:22.963 GCTI6 [Ledger INFO] Established genesis ledger, closing
+2021-06-26T15:34:22.963 GCTI6 [Ledger INFO] Root account: GBZXN7PIRZGNMHGA7MUUUF4GWPY5AYPV6LY4UV2GL6VJGIQRXFDNMADI
+2021-06-26T15:34:22.963 GCTI6 [Ledger INFO] Root account seed: SC5O7VZUXDJ6JBDSZ74DSERXL7W3Y5LTOAMRF7RQRL3TAGAPS7LUVG3L
+2021-06-26T15:34:23.159 GCTI6 [default INFO] Connection effective settings:
+2021-06-26T15:34:23.159 GCTI6 [default INFO] TARGET_PEER_CONNECTIONS: 8
+2021-06-26T15:34:23.159 GCTI6 [default INFO] MAX_ADDITIONAL_PEER_CONNECTIONS: 64
+2021-06-26T15:34:23.159 GCTI6 [default INFO] MAX_PENDING_CONNECTIONS: 500
+2021-06-26T15:34:23.159 GCTI6 [default INFO] MAX_OUTBOUND_PENDING_CONNECTIONS: 56
+2021-06-26T15:34:23.159 GCTI6 [default INFO] MAX_INBOUND_PENDING_CONNECTIONS: 444
+2021-06-26T15:34:23.160 GCTI6 [default INFO] *
+2021-06-26T15:34:23.160 GCTI6 [default INFO] * The next launch will catchup from the network afresh.
+2021-06-26T15:34:23.160 GCTI6 [default INFO] *
+2021-06-26T15:34:23.160 GCTI6 [default INFO] Application destructing
+2021-06-26T15:34:23.174 GCTI6 [default INFO] Application destroyed

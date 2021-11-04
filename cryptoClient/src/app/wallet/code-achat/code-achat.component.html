@@ -1,0 +1,24 @@
+<div class="card">
+    <app-nav></app-nav>
+    <div class="card-body">
+      <h5 class="card-title">Généré un code d'achat</h5>
+      <p>Vous voupez générer un code pour faire un acaht dans un site. Ce code ne pourra être utilisé qu'une seule fois et à un délais d'expiration de deux (2) minutes après sa création.</p>
+      <form class="row" [formGroup]="codeForm" (ngSubmit)="genererCodeAchat()" *ngIf="!codeAchat">
+        <div class="col-auto">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="{{number_phone}}">
+        </div>
+        <div class="col-auto">
+          <input type="password" class="form-control" formControlName="password" id="inputPassword2" placeholder="Mot de passe">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Généré</button>
+        </div>
+      </form>
+        <div class="shadow-lg p-3 mb-5 bg-body rounded text-success" *ngIf="codeAchat" >
+            {{message}} : {{codeAchat}}
+        </div>
+        <div class="shadow-lg p-3 mb-5 bg-body rounded text-danger" *ngIf="messageError && !codeAchat" >
+          {{messageError}}
+      </div>
+    </div>
+  </div> 

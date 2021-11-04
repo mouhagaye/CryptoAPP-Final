@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login" color="primary">se Connecter</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div id="header">
+      <img src="/assets/icon/favicon.png">
+    </div>
+    <form id="form" class="form-signin" [formGroup]="registerForm" (ngSubmit)="registerAccount()">
+        <h3 class="h3 mb-3 font-weight-normal text-center">Création de compte</h3>
+            <ion-input type="email" class="form-control" formControlName="number_phone" placeholder="Numero de telephone" required></ion-input>
+            <ion-input type="text" class="form-control" formControlName="prenom" placeholder="Prenom" required></ion-input>
+            <ion-input formControlName="nom" placeholder="Nom" required></ion-input>
+            <ion-input type="password" class="form-control" formControlName="password" placeholder="Mot de passe" required></ion-input>
+            <ion-input type="password" id="confirmPass" formControlName="confirmPassword" placeholder="Confirmation du mot de passe" required></ion-input>
+    <ion-button expand="block" shape="round" type="submit" [disabled]="registerForm.invalid">S'inscrire</ion-button>
+    </form>
+    <div class="alert alert-danger" *ngIf="alertError==true" role="alert">
+        <h3 style="color:red;">{{ messageAlert }}</h3>
+    </div>
+    <ion-spinner *ngIf="progressBar" name="crescent"></ion-spinner>
+
+  
+
+</ion-content>

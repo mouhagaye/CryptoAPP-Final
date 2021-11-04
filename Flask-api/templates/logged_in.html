@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+{% block title %}Youv'e logged in {% endblock %}
+
+{% block content %}
+<p>Votre numero de telephone est {{ numero }}</p>
+<p>Votre solde est egal a {{ solde }}</p>
+
+<div>
+    <h1>Liste des depots</h1>
+   
+    <table>
+      <thead>
+        <tr>
+          <th>Montant</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for deposit in deposits %}
+        <tr>
+          <td>{{ deposit.montant }}</td>
+          <td>{{ deposit.status }}</td>
+          <td><a href="{{ url_for('valider') }}">Confirmer</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+{% endblock %}
